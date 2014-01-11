@@ -1,0 +1,2 @@
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLibContent\obj\Windows Phone\Debug\mskrLibContent.contentprojResolveAssemblyReference.cache
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLibContent\obj\Windows Phone\Debug\mskrLibContent.contentprojResolveAssemblyReference.cache

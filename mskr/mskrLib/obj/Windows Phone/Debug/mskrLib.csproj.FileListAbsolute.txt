@@ -1,0 +1,12 @@
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.csprojResolveAssemblyReference.cache
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.csprojResolveAssemblyReference.cache
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.pdb
