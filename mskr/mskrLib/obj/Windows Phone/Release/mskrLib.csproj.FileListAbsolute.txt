@@ -1,6 +1,7 @@
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Release\mskrLib.dll
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Release\mskrLib.pdb
-C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Release\mskrLib.csprojResolveAssemblyReference.cache
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Release\mskrLib.dll
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Release\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Release\mskrLib.dll.CodeAnalysisLog.xml
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Release\mskrLib.dll.lastcodeanalysissucceeded

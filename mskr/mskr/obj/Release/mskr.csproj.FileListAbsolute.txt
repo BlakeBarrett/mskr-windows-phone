@@ -13,3 +13,5 @@ C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Releas
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Release\mskr.dll
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Release\mskr.pdb
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Release\XapCacheFile.xml
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Release\mskr.dll.CodeAnalysisLog.xml
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Release\mskr.dll.lastcodeanalysissucceeded
