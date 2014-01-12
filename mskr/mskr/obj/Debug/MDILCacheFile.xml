@@ -1,13 +1,13 @@
-﻿<xapCache source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Bin\Debug\mskr.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1/11/2014 1:07:35 AM">
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1/11/2014 12:11:48 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Background.png" archivePath="Background.png" lastWriteTime="1/10/2014 11:08:41 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="1/10/2014 11:08:41 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\obj\Debug\mskr.dll" archivePath="mskr.dll" lastWriteTime="1/11/2014 1:07:34 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.dll" archivePath="mskrLib.dll" lastWriteTime="1/11/2014 12:11:46 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\resources\crclmsk.png" archivePath="resources\crclmsk.png" lastWriteTime="1/11/2014 12:08:11 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\resources\mina.jpg" archivePath="resources\mina.jpg" lastWriteTime="1/10/2014 11:46:03 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="1/10/2014 11:08:41 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1/11/2014 12:11:48 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="1/10/2014 11:08:41 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskr\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="1/10/2014 11:08:41 PM" />
+﻿<xapCache source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Debug\mskr.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1/11/2014 2:05:54 AM">
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1/11/2014 12:11:48 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Background.png" archivePath="Background.png" lastWriteTime="1/11/2014 2:05:09 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="1/11/2014 2:05:09 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Debug\mskr.dll" archivePath="mskr.dll" lastWriteTime="1/11/2014 1:07:34 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.dll" archivePath="mskrLib.dll" lastWriteTime="1/11/2014 12:11:46 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\resources\crclmsk.png" archivePath="resources\crclmsk.png" lastWriteTime="1/11/2014 12:08:11 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\resources\mina.jpg" archivePath="resources\mina.jpg" lastWriteTime="1/10/2014 11:46:03 PM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="1/10/2014 11:08:41 PM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1/11/2014 12:11:48 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="1/11/2014 2:05:09 AM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="1/11/2014 2:05:09 AM" />
 </xapCache>

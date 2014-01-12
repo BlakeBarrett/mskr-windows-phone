@@ -23,7 +23,16 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="mskr" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Select Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+
+            <Grid Name="SelectImageGrid" Grid.Row="1">
+                <TextBlock x:Name="PageTitle" Text="Select Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <Button Opacity="0" Click="SelectImageButton_Click" Margin="0,-10,0,10"></Button>
+            </Grid>
+            
+            <Grid Name="SaveImageGrid" Grid.Row="1" Visibility="Collapsed">
+                <TextBlock Text="Save Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <Button Opacity="0" Click="SaveImageButton_Click" Margin="0,-10,0,10"></Button>
+            </Grid>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -33,10 +42,6 @@
                     <ImageBrush ImageSource="resources/crclmsk.png"/>
                 </Image.OpacityMask>
             </Image>
-            
-            <!--Create a single button to navigate to the second page which is rendered with the XNA Framework-->
-            <Button Opacity="0" Content="Change to game page" Click="Button_Click" Margin="0,-10,0,10" />
-            
         </Grid>
     </Grid>
  
