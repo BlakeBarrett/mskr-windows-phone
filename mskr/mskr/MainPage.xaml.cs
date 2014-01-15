@@ -14,7 +14,9 @@ using Microsoft.Phone.Controls;
 
 namespace mskr
 {
+    using System.IO;
     using Microsoft.Phone.Tasks;
+    using com.blakebarrett.imaging;
 
     public partial class MainPage : PhoneApplicationPage   
     {
@@ -36,7 +38,7 @@ namespace mskr
 
         private void SaveImageButton_Click(object sender, RoutedEventArgs e)
         {
-            RasterizeStack(PreviewImage);
+            ImageSaver.SaveImage(PreviewImage);
             SaveImageGrid.Visibility = Visibility.Collapsed;
             SelectImageGrid.Visibility = Visibility.Visible;
         }
@@ -45,46 +47,19 @@ namespace mskr
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                System.IO.Stream selected = e.ChosenPhoto;
+                Stream selected = e.ChosenPhoto;
 
                 //Code to display the photo on the page in an image control named myImage.
-                System.Windows.Media.Imaging.BitmapImage bmp = new System.Windows.Media.Imaging.BitmapImage();
-                bmp.SetSource(selected);
-                PreviewImage.Source = bmp;
+                MaskedBitmapImage mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
+
+                PreviewImage.Source = mskdBmpImg.ImageSource();
 
                 SelectImageGrid.Visibility = Visibility.Collapsed;
                 SaveImageGrid.Visibility = Visibility.Visible;
-                // TODO: Render full-sized masked image.
-                // Also, offer the ability to "stretch" or "constrain" the mask mode.
+                // TODO: Offer the ability to "stretch" or "constrain" the mask mode.
                 // it appears as though masks are stretched to fit their parent images by default.
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.
             }
-        }
-
-        void RasterizeStack(UIElement stack)
-        {
-            WriteableBitmap writeableBitmap = new WriteableBitmap(stack, null);
-            using (System.IO.MemoryStream s = new System.IO.MemoryStream())
-            {
-                writeableBitmap.SaveJpeg(s, (int)PreviewImage.ActualWidth, (int)PreviewImage.ActualHeight, 0, 100);
-                String filename = DateTime.Now.Ticks.ToString() + ".jpg";
-                WriteStreamToFile(s, filename);
-            }
-        }
-
-        void WriteStreamToFile(System.IO.Stream stream, String filename)
-        {
-            Microsoft.Xna.Framework.Media.MediaLibrary library = new Microsoft.Xna.Framework.Media.MediaLibrary();
-
-            // write to "Saved Pictures"
-            stream.Position = 0;
-            library.SavePicture(filename, stream);
-
-            // write to "Camera Roll"
-            //stream.Position = 0;
-            //library.SavePictureToCameraRoll(filename, stream);
-
-            stream.Dispose();
         }
     }
 }

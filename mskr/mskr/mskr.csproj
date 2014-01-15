@@ -71,6 +71,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="com\blakebarrett\imaging\ImageSaver.cs" />
     <Compile Include="com\blakebarrett\imaging\MaskedBitmapImage.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

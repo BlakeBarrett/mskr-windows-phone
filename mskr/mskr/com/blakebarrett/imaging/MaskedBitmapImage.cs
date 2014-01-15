@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -14,8 +12,14 @@ namespace mskr.com.blakebarrett.imaging
         private BitmapImage mask;
         private Image image;
 
-        public MaskedBitmapImage(BitmapImage source, BitmapImage mask)
+        public MaskedBitmapImage(Stream selectedImage, String relativeUrl)
         {
+            BitmapImage source = new BitmapImage();
+            source.SetSource(selectedImage);
+
+            Uri uri = new Uri("ms-appx:///" + relativeUrl);
+            BitmapImage mask = new BitmapImage(uri);
+
             this.source = source;
             this.mask = mask;
             Render();
@@ -30,9 +34,14 @@ namespace mskr.com.blakebarrett.imaging
             image.OpacityMask = brush;
         }
 
+        public WriteableBitmap ImageSource()
+        {
+            return new WriteableBitmap(this.image, null);
+        }
+
         public void WriteToFile(String filename)
         {
-
+            ImageSaver.SaveImage(image, filename);
         }
     }
 }
