@@ -26,7 +26,7 @@ namespace mskr
             InitializeComponent();
             DataContext = new VM { Data = new DataSrc { SelectedItem = new DataItem { Selected = 0 } } };
             string[] masks = new string[] { "resources/crclmsk.png", "resources/crclmsk.png", "resources/crclmsk.png" };
-            this.loop.DataSource = new DataSrc<string>() { Items = masks, SelectedItem = "resources/crclmsk.png" };
+            //this.loop.DataSource = new DataSrc<string>() { Items = masks, SelectedItem = "resources/crclmsk.png" };
         }
     }
 
