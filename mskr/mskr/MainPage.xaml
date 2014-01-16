@@ -36,7 +36,10 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1"  
+              Height="{Binding Path=Height, ElementName=BackgroundImage}"
+              Width="{Binding Path=Width, ElementName=BackgroundImage}">
+            <Rectangle Margin="0,0,0,0" Fill="White"/>
             <Image Opacity="0.5" Name="BackroundImage" Margin="-5,-5,-5,-5"
                    Source="resources/mina.jpg" Stretch="Uniform"/>
             <Image Name="PreviewImage" Source="resources/mina.jpg">
