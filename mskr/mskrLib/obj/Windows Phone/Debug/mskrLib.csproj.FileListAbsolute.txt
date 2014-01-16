@@ -10,3 +10,13 @@ C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.dll
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-wp\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\Content\Toolkit.Content\ApplicationBar.Select.xnb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\Content\Toolkit.Content\ApplicationBar.Delete.xnb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\Content\Toolkit.Content\ApplicationBar.Check.xnb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\Content\Toolkit.Content\ApplicationBar.Cancel.xnb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\Content\Toolkit.Content\ApplicationBar.Add.xnb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.dll
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.pdb

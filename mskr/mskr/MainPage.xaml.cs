@@ -21,6 +21,7 @@ namespace mskr
     public partial class MainPage : PhoneApplicationPage   
     {
         PhotoChooserTask photoChooserTask;
+        MaskedBitmapImage mskdBmpImg;
 
         // Constructor
         public MainPage()
@@ -38,7 +39,11 @@ namespace mskr
 
         private void SaveImageButton_Click(object sender, RoutedEventArgs e)
         {
-            ImageSaver.SaveImage(PreviewImage);
+            // mskdBmpImg.WriteToFile();
+            // ImageSaver.SaveImage(PreviewImage);
+            ImageSaver.SaveToAlbum = false;
+            ImageSaver.SaveImage(ContentPanel);
+
             SaveImageGrid.Visibility = Visibility.Collapsed;
             SelectImageGrid.Visibility = Visibility.Visible;
         }
@@ -49,10 +54,12 @@ namespace mskr
             {
                 Stream selected = e.ChosenPhoto;
 
-                //Code to display the photo on the page in an image control named myImage.
-                MaskedBitmapImage mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
+                // Code to display the photo on the page in an image control named myImage.
+                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
+                WriteableBitmap source = mskdBmpImg.ImageSource();
 
-                PreviewImage.Source = mskdBmpImg.ImageSource();
+                PreviewImage.Source = source;
+                BackroundImage.Source = source;
 
                 SelectImageGrid.Visibility = Visibility.Collapsed;
                 SaveImageGrid.Visibility = Visibility.Visible;

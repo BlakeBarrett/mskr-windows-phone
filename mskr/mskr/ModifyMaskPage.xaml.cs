@@ -19,7 +19,6 @@ using Microsoft.Phone.Tasks;
 
 namespace mskr
 {
-    using mskr.DataSrc;
 
     public partial class ModifyMaskPage : PhoneApplicationPage
     {

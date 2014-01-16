@@ -37,9 +37,13 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Image Opacity="0.5" Name="BackroundImage" Margin="-5,-5,-5,-5"
+                   Source="resources/mina.jpg" Stretch="Uniform"/>
             <Image Name="PreviewImage" Source="resources/mina.jpg">
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="resources/crclmsk.png"/>
+                    <ImageBrush 
+                        Opacity="1"
+                        ImageSource="resources/crclmsk.png"/>
                 </Image.OpacityMask>
             </Image>
         </Grid>

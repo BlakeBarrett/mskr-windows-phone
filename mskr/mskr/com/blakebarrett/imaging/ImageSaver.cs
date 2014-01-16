@@ -14,18 +14,40 @@ namespace mskr.com.blakebarrett.imaging
         public static Boolean SaveToCameraRoll = true;
         public static Boolean SaveToAlbum = true;
 
-        public static void SaveImage(Image image)
+        public static void SaveImage(FrameworkElement image)
         {
-            String filename = DateTime.Now.Ticks.ToString() + "_mskr.jpg";
+            DateTime now = DateTime.Now;
+            String filename = now.Ticks.ToString() + "_mskr";
             SaveImage(image, filename);
         }
 
-        public static void SaveImage(Image image, String filename)
+        public static void SaveImage(FrameworkElement element, String filename)
         {
-            WriteableBitmap writeableBitmap = new WriteableBitmap(image, null);
+            WriteableBitmap writeableBitmap = new WriteableBitmap(element, null);
             using (System.IO.MemoryStream s = new System.IO.MemoryStream())
             {
-                writeableBitmap.SaveJpeg(s, (int)image.ActualWidth, (int)image.ActualHeight, 0, 100);
+                // save the longest edge.
+                int width = 0;
+                if (element.Width != double.NaN)
+                {
+                    width = (int)element.Width;
+                }
+                if (element.ActualWidth != double.NaN)
+                {
+                    width = Math.Max(width, (int)element.ActualWidth);
+                }
+
+                int height = 0;
+                if (element.Height != double.NaN)
+                {
+                    height = (int)element.Height;
+                }
+                if (element.ActualHeight != double.NaN)
+                {
+                    height = Math.Max(height, (int)element.ActualHeight);
+                }
+
+                writeableBitmap.SaveJpeg(s, width, height, 0, 100);
                 WriteStreamToFile(s, filename);
             }
         }

@@ -11,6 +11,7 @@ namespace mskr.com.blakebarrett.imaging
         private BitmapImage source;
         private BitmapImage mask;
         private Image image;
+        private Grid container;
 
         public MaskedBitmapImage(Stream selectedImage, String relativeUrl)
         {
@@ -27,21 +28,29 @@ namespace mskr.com.blakebarrett.imaging
 
         private void Render()
         {
+            container = new Grid();
             image = new Image();
             image.Source = source;
             ImageBrush brush = new ImageBrush();
             brush.ImageSource = mask;
             image.OpacityMask = brush;
+
+            image.Width = source.PixelWidth;
+            image.Height = source.PixelHeight;
+
+            container.Children.Add(image);
         }
 
         public WriteableBitmap ImageSource()
         {
-            return new WriteableBitmap(this.image, null);
+            return new WriteableBitmap(this.container, null);
         }
 
-        public void WriteToFile(String filename)
+        public void WriteToFile()
         {
-            ImageSaver.SaveImage(image, filename);
+            this.container.Width = source.PixelWidth;
+            this.container.Height = source.PixelHeight;
+            ImageSaver.SaveImage(container);
         }
     }
 }
