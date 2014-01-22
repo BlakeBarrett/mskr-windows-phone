@@ -33,6 +33,7 @@ namespace mskr.com.blakebarrett.imaging
             image.Source = source;
             ImageBrush brush = new ImageBrush();
             brush.ImageSource = mask;
+            brush.Stretch = Stretch.None;
             image.OpacityMask = brush;
 
             image.Width = source.PixelWidth;

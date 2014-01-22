@@ -55,7 +55,8 @@ namespace mskr
                 Stream selected = e.ChosenPhoto;
 
                 // Code to display the photo on the page in an image control named myImage.
-                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
+                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/powmsk.png");
+                // mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
                 WriteableBitmap source = mskdBmpImg.ImageSource();
 
                 PreviewImage.Source = source;

@@ -109,6 +109,9 @@
     </Content>
     <Content Include="resources\crclmsk.png" />
     <Content Include="resources\mina.jpg" />
+    <Content Include="resources\plrdmsk.png" />
+    <Content Include="resources\powmsk.png" />
+    <Content Include="resources\trnglmsk.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

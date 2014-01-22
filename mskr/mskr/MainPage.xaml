@@ -46,7 +46,8 @@
                 <Image.OpacityMask>
                     <ImageBrush 
                         Opacity="1"
-                        ImageSource="resources/crclmsk.png"/>
+                        Stretch="Uniform"
+                        ImageSource="resources/trnglmsk.png"/>
                 </Image.OpacityMask>
             </Image>
         </Grid>
