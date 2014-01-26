@@ -22,6 +22,7 @@ namespace mskr
     {
         PhotoChooserTask photoChooserTask;
         MaskedBitmapImage mskdBmpImg;
+        String selectedMask = "resources/crclmsk.png";
 
         // Constructor
         public MainPage()
@@ -40,12 +41,25 @@ namespace mskr
         private void SaveImageButton_Click(object sender, RoutedEventArgs e)
         {
             // mskdBmpImg.WriteToFile();
-            // ImageSaver.SaveImage(PreviewImage);
+            ImageSaver.SaveImage(PreviewImage);
             ImageSaver.SaveToAlbum = false;
-            ImageSaver.SaveImage(ContentPanel);
+            WriteableBitmap savedImage = ImageSaver.SaveImage(ContentPanel);
 
             SaveImageGrid.Visibility = Visibility.Collapsed;
             SelectImageGrid.Visibility = Visibility.Visible;
+
+            BackroundImage.Source = savedImage;
+        }
+
+        private void ListPicker_SelectionChanged(object sender, EventArgs e)
+        {
+            String selectedMaskString = ((ListPickerItem)((ListPicker)sender).SelectedItem).Content.ToString();
+            this.selectedMask = "resources/" + selectedMaskString.ToLower() + "msk.png";
+            if (mskdBmpImg != null)
+            {
+                mskdBmpImg.ChangeMask(this.selectedMask);
+                PreviewImage.OpacityMask = mskdBmpImg.GetMask();
+            }
         }
 
         void photoChooserTask_Completed(object sender, PhotoResult e)
@@ -54,16 +68,22 @@ namespace mskr
             {
                 Stream selected = e.ChosenPhoto;
 
+                String maskString = "resources/" + ((ListPickerItem)MaskListPicker.SelectedItem).Content.ToString().ToLower() + "msk.png";
+
                 // Code to display the photo on the page in an image control named myImage.
-                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/powmsk.png");
+                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, maskString);
                 // mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
                 WriteableBitmap source = mskdBmpImg.ImageSource();
 
                 PreviewImage.Source = source;
-                BackroundImage.Source = source;
+                PreviewImage.OpacityMask = mskdBmpImg.GetMask();
 
                 SelectImageGrid.Visibility = Visibility.Collapsed;
                 SaveImageGrid.Visibility = Visibility.Visible;
+
+                // save every step of the way
+                //BackroundImage.Source = ImageSaver.SaveImage(ContentPanel);
+
                 // TODO: Offer the ability to "stretch" or "constrain" the mask mode.
                 // it appears as though masks are stretched to fit their parent images by default.
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.

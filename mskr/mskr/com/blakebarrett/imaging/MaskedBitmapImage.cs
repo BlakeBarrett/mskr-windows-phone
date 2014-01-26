@@ -9,7 +9,7 @@ namespace mskr.com.blakebarrett.imaging
     class MaskedBitmapImage
     {
         private BitmapImage source;
-        private BitmapImage mask;
+        private ImageBrush mask;
         private Image image;
         private Grid container;
 
@@ -17,13 +17,8 @@ namespace mskr.com.blakebarrett.imaging
         {
             BitmapImage source = new BitmapImage();
             source.SetSource(selectedImage);
-
-            Uri uri = new Uri("ms-appx:///" + relativeUrl);
-            BitmapImage mask = new BitmapImage(uri);
-
             this.source = source;
-            this.mask = mask;
-            Render();
+            ChangeMask(relativeUrl);
         }
 
         private void Render()
@@ -31,15 +26,29 @@ namespace mskr.com.blakebarrett.imaging
             container = new Grid();
             image = new Image();
             image.Source = source;
-            ImageBrush brush = new ImageBrush();
-            brush.ImageSource = mask;
-            brush.Stretch = Stretch.None;
-            image.OpacityMask = brush;
+            image.OpacityMask = GetMask();
 
             image.Width = source.PixelWidth;
             image.Height = source.PixelHeight;
 
             container.Children.Add(image);
+        }
+
+        public void ChangeMask(String relativeUrl) 
+        {
+            ImageBrush brush = new ImageBrush();
+            brush.ImageSource =
+            new BitmapImage(
+                new Uri(relativeUrl, UriKind.Relative)
+            );
+            brush.Stretch = Stretch.Uniform;
+            this.mask = brush;
+            Render();
+        }
+
+        public ImageBrush GetMask()
+        {
+            return this.mask;
         }
 
         public WriteableBitmap ImageSource()

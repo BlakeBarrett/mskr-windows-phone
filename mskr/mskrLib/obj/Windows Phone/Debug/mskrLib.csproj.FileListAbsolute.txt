@@ -20,3 +20,4 @@ C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Win
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.dll
 C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.pdb
+C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\obj\Windows Phone\Debug\mskrLib.csprojResolveAssemblyReference.cache

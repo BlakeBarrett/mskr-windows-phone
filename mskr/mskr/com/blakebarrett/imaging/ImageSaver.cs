@@ -14,14 +14,14 @@ namespace mskr.com.blakebarrett.imaging
         public static Boolean SaveToCameraRoll = true;
         public static Boolean SaveToAlbum = true;
 
-        public static void SaveImage(FrameworkElement image)
+        public static WriteableBitmap SaveImage(FrameworkElement image)
         {
             DateTime now = DateTime.Now;
             String filename = now.Ticks.ToString() + "_mskr";
-            SaveImage(image, filename);
+            return SaveImage(image, filename);
         }
 
-        public static void SaveImage(FrameworkElement element, String filename)
+        public static WriteableBitmap SaveImage(FrameworkElement element, String filename)
         {
             WriteableBitmap writeableBitmap = new WriteableBitmap(element, null);
             using (System.IO.MemoryStream s = new System.IO.MemoryStream())
@@ -50,6 +50,7 @@ namespace mskr.com.blakebarrett.imaging
                 writeableBitmap.SaveJpeg(s, width, height, 0, 100);
                 WriteStreamToFile(s, filename);
             }
+            return writeableBitmap;
         }
 
         public static void WriteStreamToFile(System.IO.Stream stream, String filename)

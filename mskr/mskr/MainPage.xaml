@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -33,6 +34,17 @@
                 <TextBlock Text="Save Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
                 <Button Opacity="0" Click="SaveImageButton_Click" Margin="0,-10,0,10"></Button>
             </Grid>
+
+            <toolkit:ListPicker Name="MaskListPicker" 
+                                Header="Selected mask" 
+                                SelectionChanged="ListPicker_SelectionChanged">
+                <toolkit:ListPickerItem Content="crcl"/>
+                <toolkit:ListPickerItem Content="trngl"/>
+                <toolkit:ListPickerItem Content="POW"/>
+                <toolkit:ListPickerItem Content="plrd"/>
+                <toolkit:ListPickerItem Content="sqr"/>
+            </toolkit:ListPicker>
+
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -40,15 +52,8 @@
               Height="{Binding Path=Height, ElementName=BackgroundImage}"
               Width="{Binding Path=Width, ElementName=BackgroundImage}">
             <Rectangle Margin="0,0,0,0" Fill="White"/>
-            <Image Opacity="0.5" Name="BackroundImage" Margin="-5,-5,-5,-5"
-                   Source="resources/mina.jpg" Stretch="Uniform"/>
-            <Image Name="PreviewImage" Source="resources/mina.jpg">
-                <Image.OpacityMask>
-                    <ImageBrush 
-                        Opacity="1"
-                        Stretch="Uniform"
-                        ImageSource="resources/trnglmsk.png"/>
-                </Image.OpacityMask>
+            <Image Opacity="0.5" Name="BackroundImage" Margin="0,0,0,0" Stretch="Uniform"/>
+            <Image Name="PreviewImage" Source="resources/mina.jpg" Stretch="Uniform">
             </Image>
         </Grid>
     </Grid>
