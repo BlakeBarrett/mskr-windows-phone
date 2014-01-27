@@ -26,10 +26,9 @@ namespace mskr.com.blakebarrett.imaging
             container = new Grid();
             image = new Image();
             image.Source = source;
-            image.OpacityMask = GetMask();
 
-            image.Width = source.PixelWidth;
-            image.Height = source.PixelHeight;
+            image.Stretch = Stretch.UniformToFill;
+            image.OpacityMask = GetMask();
 
             container.Children.Add(image);
         }

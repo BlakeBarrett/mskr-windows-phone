@@ -38,9 +38,13 @@ namespace mskr
             photoChooserTask.Show();
         }
 
+        private void AddLayerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void SaveImageButton_Click(object sender, RoutedEventArgs e)
         {
-            // mskdBmpImg.WriteToFile();
             ImageSaver.SaveImage(PreviewImage);
             ImageSaver.SaveToAlbum = false;
             WriteableBitmap savedImage = ImageSaver.SaveImage(ContentPanel);
@@ -68,11 +72,10 @@ namespace mskr
             {
                 Stream selected = e.ChosenPhoto;
 
-                String maskString = "resources/" + ((ListPickerItem)MaskListPicker.SelectedItem).Content.ToString().ToLower() + "msk.png";
+                //String maskString = "resources/" + ((ListPickerItem)MaskListPicker.SelectedItem).Content.ToString().ToLower() + "msk.png";
 
                 // Code to display the photo on the page in an image control named myImage.
-                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, maskString);
-                // mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, "resources/crclmsk.png");
+                mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, this.selectedMask);
                 WriteableBitmap source = mskdBmpImg.ImageSource();
 
                 PreviewImage.Source = source;
