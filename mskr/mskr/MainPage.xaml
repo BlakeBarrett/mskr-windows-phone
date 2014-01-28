@@ -62,9 +62,9 @@
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_save.png" Text="Save" Click="SaveImageButton_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_add.png" Text="Add Layer" Click="AddLayerButton_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_new.png" Text="New" Click="NewCompositionButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/save.png" Text="Save" Click="SaveImageButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/like.png" Text="Add Layer" Click="AddLayerButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/new.png" Text="New" Click="NewCompositionButton_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
