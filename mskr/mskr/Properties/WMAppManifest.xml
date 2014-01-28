@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{c3902597-879c-4b47-9148-d96eb0df904c}" Title="mskr" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="mskr author" Description="Sample description" Publisher="mskr">
+  <App xmlns="" ProductID="{e2deaf51-9b97-444b-b0db-9f4c3c8bf61c}" Title="mskr" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="mskr author" Description="Add layer masks to an image." Publisher="mskr">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_MEDIALIB" />
