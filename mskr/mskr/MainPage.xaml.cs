@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 namespace mskr
 {
@@ -25,7 +26,7 @@ namespace mskr
         PhotoChooserTask photoChooserTask;
         MaskedBitmapImage mskdBmpImg;
         String selectedMask = "resources/crclmsk.png";
-
+        
         // Constructor
         public MainPage()
         {
@@ -57,7 +58,7 @@ namespace mskr
             AddLayer();
         }
 
-        private void NewCompositionButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
             SetActionLabel(SELECT_IMAGE);
             PreviewImage.Source = null;
@@ -106,6 +107,10 @@ namespace mskr
         private void AddLayer()
         {
             BackgroundImage.Source = new WriteableBitmap(ContentPanel, null);
+            ApplicationBar.IsVisible = true;
+            (ApplicationBar.Buttons[0] as ApplicationBarIconButton).IsEnabled = true; // save
+            (ApplicationBar.Buttons[1] as ApplicationBarIconButton).IsEnabled = true; // add layer
+            (ApplicationBar.Buttons[2] as ApplicationBarIconButton).IsEnabled = true; // delete/new
         }
 
         private void SaveImage()
