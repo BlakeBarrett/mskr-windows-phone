@@ -54,12 +54,13 @@ namespace mskr.com.blakebarrett.imaging
         {
             return new WriteableBitmap(this.container, null);
         }
-
+        /*
         public void WriteToFile()
         {
             this.container.Width = source.PixelWidth;
             this.container.Height = source.PixelHeight;
             ImageSaver.SaveImage(container);
         }
+        */
     }
 }

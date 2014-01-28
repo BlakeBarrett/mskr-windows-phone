@@ -20,6 +20,8 @@ namespace mskr
 
     public partial class MainPage : PhoneApplicationPage   
     {
+        public const String SELECT_IMAGE = "Select Image";
+        public const String ADD_LAYER = "Add Layer";
         PhotoChooserTask photoChooserTask;
         MaskedBitmapImage mskdBmpImg;
         String selectedMask = "resources/crclmsk.png";
@@ -27,32 +29,40 @@ namespace mskr
         // Constructor
         public MainPage()
         {
-            InitializeComponent();
-            photoChooserTask = new PhotoChooserTask();
-            photoChooserTask.Completed += new EventHandler<PhotoResult>(photoChooserTask_Completed);
+            InitializeComponent(); 
+            CreateNew();
         }
 
         // Simple button Click event handler to take us to the second page
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)
         {
-            photoChooserTask.Show();
+            switch (ActionLabel.Text)
+            {
+                case SELECT_IMAGE:
+                    photoChooserTask.Show();
+                    break;
+                case ADD_LAYER:
+                    AddLayer();
+                    break;
+            };
         }
 
-        private void AddLayerButton_Click(object sender, RoutedEventArgs e)
+        private void SaveImageButton_Click(object sender, EventArgs e)
         {
-
+            SaveImage();
         }
 
-        private void SaveImageButton_Click(object sender, RoutedEventArgs e)
+        private void AddLayerButton_Click(object sender, EventArgs e)
         {
-            ImageSaver.SaveImage(PreviewImage);
-            ImageSaver.SaveToAlbum = false;
-            WriteableBitmap savedImage = ImageSaver.SaveImage(ContentPanel);
+            AddLayer();
+        }
 
-            SaveImageGrid.Visibility = Visibility.Collapsed;
-            SelectImageGrid.Visibility = Visibility.Visible;
-
-            BackroundImage.Source = savedImage;
+        private void NewCompositionButton_Click(object sender, EventArgs e)
+        {
+            SetActionLabel(SELECT_IMAGE);
+            PreviewImage.Source = null;
+            BackgroundImage.Source = null;
+            CreateNew();
         }
 
         private void ListPicker_SelectionChanged(object sender, EventArgs e)
@@ -81,16 +91,40 @@ namespace mskr
                 PreviewImage.Source = source;
                 PreviewImage.OpacityMask = mskdBmpImg.GetMask();
 
-                SelectImageGrid.Visibility = Visibility.Collapsed;
-                SaveImageGrid.Visibility = Visibility.Visible;
-
                 // save every step of the way
                 //BackroundImage.Source = ImageSaver.SaveImage(ContentPanel);
 
                 // TODO: Offer the ability to "stretch" or "constrain" the mask mode.
                 // it appears as though masks are stretched to fit their parent images by default.
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.
+
+                AddLayer();
+                SetActionLabel(ADD_LAYER);
             }
+        }
+
+        private void AddLayer()
+        {
+            BackgroundImage.Source = new WriteableBitmap(ContentPanel, null);
+        }
+
+        private void SaveImage()
+        {
+            ImageSaver.SaveToAlbum = false;
+            ImageSaver.SaveToCameraRoll = true;
+            WriteableBitmap savedImage = ImageSaver.SaveImage(ContentPanel);
+
+            BackgroundImage.Source = savedImage;
+        }
+
+        private void CreateNew()
+        {
+            photoChooserTask = new PhotoChooserTask();
+            photoChooserTask.Completed += new EventHandler<PhotoResult>(photoChooserTask_Completed);
+        }
+
+        private void SetActionLabel(String label) {
+            ActionLabel.Text = label;
         }
     }
 }

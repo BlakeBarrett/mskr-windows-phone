@@ -11,8 +11,8 @@ namespace mskr.com.blakebarrett.imaging
 {
     class ImageSaver
     {
-        public static Boolean SaveToCameraRoll = true;
-        public static Boolean SaveToAlbum = true;
+        public static Boolean SaveToCameraRoll = false;
+        public static Boolean SaveToAlbum = false;
 
         public static WriteableBitmap SaveImage(FrameworkElement image)
         {

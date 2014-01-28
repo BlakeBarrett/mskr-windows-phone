@@ -26,18 +26,8 @@
             <TextBlock x:Name="ApplicationTitle" Text="mskr" Style="{StaticResource PhoneTextNormalStyle}"/>
 
             <Grid Name="SelectImageGrid" Grid.Row="1">
-                <TextBlock x:Name="PageTitle" Text="Select Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <TextBlock x:Name="ActionLabel" Text="Select Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
                 <Button Opacity="0" Click="SelectImageButton_Click" Margin="0,-10,0,10"></Button>
-            </Grid>
-            
-            <Grid Name="SaveImageGrid" Grid.Row="1" Visibility="Collapsed">
-                <TextBlock Text="Save Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-                <Button Opacity="0" Click="SaveImageButton_Click" Margin="0,-10,0,10"></Button>
-            </Grid>
-            
-            <Grid Name="AddNewLayerGrid" Grid.Row="1" Visibility="Collapsed">
-                <TextBlock Text="Add Layer" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-                <Button Opacity="0" Click="AddLayerButton_Click" Margin="0,-10,0,10"></Button>
             </Grid>
             
             <toolkit:ListPicker Name="MaskListPicker" 
@@ -59,7 +49,7 @@
             
             <Rectangle Margin="0,0,0,0" Fill="White"/>
             
-            <Image Opacity="0.5" Name="BackroundImage" Margin="0,0,0,0" 
+            <Image Opacity="0.5" Name="BackgroundImage" Margin="0,0,0,0" 
                    Stretch="Uniform" 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
@@ -70,5 +60,11 @@
                    HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
- 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_save.png" Text="Save" Click="SaveImageButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_add.png" Text="Add Layer" Click="AddLayerButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_new.png" Text="New" Click="NewCompositionButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
