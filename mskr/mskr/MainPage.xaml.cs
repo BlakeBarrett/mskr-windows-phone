@@ -99,6 +99,7 @@ namespace mskr
                 // it appears as though masks are stretched to fit their parent images by default.
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.
 
+                MakeAppActive();
                 AddLayer();
                 SetActionLabel(ADD_LAYER);
             }
@@ -107,6 +108,11 @@ namespace mskr
         private void AddLayer()
         {
             BackgroundImage.Source = new WriteableBitmap(ContentPanel, null);
+        }
+
+        private void MakeAppActive() 
+        {
+            MaskListPicker.IsEnabled = true;
             ApplicationBar.IsVisible = true;
             (ApplicationBar.Buttons[0] as ApplicationBarIconButton).IsEnabled = true; // save
             (ApplicationBar.Buttons[1] as ApplicationBarIconButton).IsEnabled = true; // add layer
