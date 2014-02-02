@@ -52,6 +52,8 @@ namespace mskr.com.blakebarrett.imaging
             image.OpacityMask = GetMask();
             image.Source = source;
 
+            Grid.SetColumn(image, 1);
+            Grid.SetRow(image, 1);
             container.Children.Add(image);
         }
 
