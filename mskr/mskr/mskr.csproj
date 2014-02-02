@@ -113,6 +113,7 @@
     <Content Include="Icons\save.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="resources\crclmsk.png" />
+    <Content Include="resources\eqltymsk.png" />
     <Content Include="resources\mina.jpg" />
     <Content Include="resources\plrdmsk.png" />
     <Content Include="resources\powmsk.png" />

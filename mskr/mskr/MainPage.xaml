@@ -32,14 +32,13 @@
             
             <toolkit:ListPicker Name="MaskListPicker" 
                                 Header="Selected mask" 
-                                SelectedIndex="4"
                                 SelectionChanged="ListPicker_SelectionChanged"
                                 IsEnabled="False">
+                <toolkit:ListPickerItem Content="sqr"/>
                 <toolkit:ListPickerItem Content="crcl"/>
                 <toolkit:ListPickerItem Content="trngl"/>
                 <toolkit:ListPickerItem Content="POW"/>
-                <toolkit:ListPickerItem Content="plrd"/>
-                <toolkit:ListPickerItem Content="sqr"/>
+                <toolkit:ListPickerItem Content="eqlty"/>
             </toolkit:ListPicker>
 
         </StackPanel>

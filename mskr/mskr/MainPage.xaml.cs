@@ -107,6 +107,7 @@ namespace mskr
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.
 
                 MakeAppActive();
+                // we do this twice because we want to start out with a base sqrmsk then allow them to modify to their heart's content.
                 AddLayer();
                 SetActionLabel(ADD_LAYER);
             }
