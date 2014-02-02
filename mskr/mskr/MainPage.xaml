@@ -32,6 +32,7 @@
             
             <toolkit:ListPicker Name="MaskListPicker" 
                                 Header="Selected mask" 
+                                SelectedIndex="4"
                                 SelectionChanged="ListPicker_SelectionChanged"
                                 IsEnabled="False">
                 <toolkit:ListPickerItem Content="crcl"/>

@@ -25,7 +25,7 @@ namespace mskr
         public const String ADD_LAYER = "Add Layer";
         PhotoChooserTask photoChooserTask;
         MaskedBitmapImage mskdBmpImg;
-        String selectedMask = "resources/crclmsk.png";
+        String selectedMask = "resources/sqrmsk.png";
         
         // Constructor
         public MainPage()
@@ -136,7 +136,7 @@ namespace mskr
             ImageSaver.SaveToCameraRoll = true;
             WriteableBitmap savedImage = ImageSaver.SaveImage(new WriteableBitmap(ContentPanel, null));
             //WriteableBitmap savedImage = ImageSaver.SaveImage(mskdBmpImg.ImageSource());
-            SetImages(savedImage);
+            //SetImages(savedImage);
         }
 
         private void ChangeMask(String selectedMask)
