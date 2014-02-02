@@ -38,6 +38,7 @@ namespace mskr.com.blakebarrett.imaging
             container = new Grid();
             container.Background = new SolidColorBrush(Colors.White);
 
+            // See link for docs on `Image` class: http://msdn.microsoft.com/en-us/library/system.windows.controls.image(v=vs.110).aspx
             image = new Image();
             //System.Windows.Shapes.Rectangle rectangle = new System.Windows.Shapes.Rectangle();
             //rectangle.Margin = new System.Windows.Thickness(0);
@@ -45,6 +46,7 @@ namespace mskr.com.blakebarrett.imaging
 
             container.Children.Add(image);
 
+            // See link for more on `Stretch` enum: http://msdn.microsoft.com/en-us/library/system.windows.media.stretch(v=vs.110).aspx
             image.Stretch = Stretch.UniformToFill;
             image.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
             image.VerticalAlignment = System.Windows.VerticalAlignment.Center;

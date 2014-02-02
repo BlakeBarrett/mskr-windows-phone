@@ -14,39 +14,37 @@ namespace mskr.com.blakebarrett.imaging
         public static Boolean SaveToCameraRoll = false;
         public static Boolean SaveToAlbum = false;
 
-        public static WriteableBitmap SaveImage(FrameworkElement image)
+        private static String GetNowString()
         {
             DateTime now = DateTime.Now;
-            String filename = now.Ticks.ToString() + "_mskr";
+            return now.Ticks.ToString();
+        }
+
+        public static WriteableBitmap SaveImage(FrameworkElement image)
+        {
+            String filename =  GetNowString() + "_mskr";
+            return SaveImage(image, filename);
+        }
+
+        public static WriteableBitmap SaveImage(WriteableBitmap image)
+        {
+            String filename = GetNowString() + "_mskr";
             return SaveImage(image, filename);
         }
 
         public static WriteableBitmap SaveImage(FrameworkElement element, String filename)
         {
             WriteableBitmap writeableBitmap = new WriteableBitmap(element, null);
+            return SaveImage(writeableBitmap, filename);
+        }
+
+        public static WriteableBitmap SaveImage(WriteableBitmap writeableBitmap, String filename) 
+        {
             using (System.IO.MemoryStream s = new System.IO.MemoryStream())
             {
                 // save the longest edge.
-                int width = 0;
-                if (element.Width != double.NaN)
-                {
-                    width = (int)element.Width;
-                }
-                if (element.ActualWidth != double.NaN)
-                {
-                    width = Math.Max(width, (int)element.ActualWidth);
-                }
-
-                int height = 0;
-                if (element.Height != double.NaN)
-                {
-                    height = (int)element.Height;
-                }
-                if (element.ActualHeight != double.NaN)
-                {
-                    height = Math.Max(height, (int)element.ActualHeight);
-                }
-
+                int width = writeableBitmap.PixelWidth;
+                int height = writeableBitmap.PixelHeight;
                 writeableBitmap.SaveJpeg(s, width, height, 0, 100);
                 WriteStreamToFile(s, filename);
             }
@@ -62,6 +60,7 @@ namespace mskr.com.blakebarrett.imaging
             {
                 stream.Position = 0;
                 library.SavePicture(filename, stream);
+                Console.WriteLine("Saved Image: " + filename + " to 'Saved Pictures' album");
             }
 
             // write to "Camera Roll"
@@ -69,6 +68,7 @@ namespace mskr.com.blakebarrett.imaging
             {
                 stream.Position = 0;
                 library.SavePictureToCameraRoll(filename, stream);
+                Console.WriteLine("Saved Image: " + filename + " to Camera Roll");
             }
 
             stream.Dispose();

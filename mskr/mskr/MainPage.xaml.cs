@@ -48,6 +48,14 @@ namespace mskr
             };
         }
 
+        private void PreviewImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (ActionLabel.Text == SELECT_IMAGE)
+            {
+                SelectImageButton_Click(sender, e);
+            }
+        }
+
         private void SaveImageButton_Click(object sender, EventArgs e)
         {
             SaveImage();
@@ -61,8 +69,7 @@ namespace mskr
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             SetActionLabel(SELECT_IMAGE);
-            BackgroundImage = new Image();
-            PreviewImage = new Image();
+            photoChooserTask.Show();
             CreateNew();
         }
 
