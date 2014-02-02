@@ -21,33 +21,88 @@ namespace mskr.com.blakebarrett.imaging
             ChangeMask(relativeUrl);
         }
 
+        public MaskedBitmapImage(WriteableBitmap writableBitmap, String relativeUrl)
+        {
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    writableBitmap.SaveJpeg(ms, (int)writableBitmap.PixelWidth, (int)writableBitmap.PixelHeight, 0, 100);
+            //    this.source = new BitmapImage();
+            //    this.source.SetSource(ms);
+            //}
+            ChangeImage(writableBitmap);
+            ChangeMask(relativeUrl);
+        }
+
         private void Render()
         {
             container = new Grid();
-            image = new Image();
-            image.Source = source;
+            container.Background = new SolidColorBrush(Colors.White);
 
-            image.Stretch = Stretch.UniformToFill;
-            image.OpacityMask = GetMask();
+            image = new Image();
+            //System.Windows.Shapes.Rectangle rectangle = new System.Windows.Shapes.Rectangle();
+            //rectangle.Margin = new System.Windows.Thickness(0);
+            //rectangle.Fill = new SolidColorBrush(Colors.White);
 
             container.Children.Add(image);
+
+            image.Stretch = Stretch.UniformToFill;
+            image.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            image.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+
+            image.OpacityMask = GetMask();
+            image.Source = source;
+        }
+
+        void image_ImageOpened(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Image img = (Image)sender;
+            img.OpacityMask = GetMask();
         }
 
         public void ChangeMask(String relativeUrl) 
         {
-            ImageBrush brush = new ImageBrush();
-            brush.ImageSource =
-            new BitmapImage(
-                new Uri(relativeUrl, UriKind.Relative)
-            );
-            brush.Stretch = Stretch.Uniform;
-            this.mask = brush;
+            this.mask = GetBrushMaskForUrl(relativeUrl);
             Render();
+        }
+
+        public void ChangeImage(WriteableBitmap image)
+        {
+            this.source = ToBitmapImage(image);
+            Render();
+        }
+
+        public static BitmapImage ToBitmapImage(WriteableBitmap wbm)
+        {
+            BitmapImage bmp = new BitmapImage();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                wbm.SaveJpeg(ms, wbm.PixelWidth, wbm.PixelHeight, 0, 100);
+                bmp.SetSource(ms);
+            }
+            return bmp;
+        }
+
+        public static ImageBrush GetBrushMaskForUrl(String relativeUrl)
+        {
+            BitmapImage mask = new BitmapImage(new Uri(relativeUrl, UriKind.Relative));
+            return GetMaskForBitmap(mask);
+        }
+
+        public static ImageBrush GetMaskForBitmap(BitmapImage mask) {
+            ImageBrush brush = new ImageBrush();
+            brush.ImageSource = mask;
+            brush.Stretch = Stretch.Uniform;
+            return brush;
         }
 
         public ImageBrush GetMask()
         {
             return this.mask;
+        }
+
+        public Image GetImage()
+        {
+            return this.image;
         }
 
         public WriteableBitmap ImageSource()

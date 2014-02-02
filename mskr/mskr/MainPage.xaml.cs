@@ -61,8 +61,8 @@ namespace mskr
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             SetActionLabel(SELECT_IMAGE);
-            PreviewImage.Source = null;
-            BackgroundImage.Source = null;
+            BackgroundImage = new Image();
+            PreviewImage = new Image();
             CreateNew();
         }
 
@@ -72,8 +72,7 @@ namespace mskr
             this.selectedMask = "resources/" + selectedMaskString.ToLower() + "msk.png";
             if (mskdBmpImg != null)
             {
-                mskdBmpImg.ChangeMask(this.selectedMask);
-                PreviewImage.OpacityMask = mskdBmpImg.GetMask();
+                ChangeMask(this.selectedMask);
             }
         }
 
@@ -87,8 +86,9 @@ namespace mskr
 
                 // Code to display the photo on the page in an image control named myImage.
                 mskdBmpImg = new MaskedBitmapImage(e.ChosenPhoto, this.selectedMask);
-                WriteableBitmap source = mskdBmpImg.ImageSource();
+                SetImages(mskdBmpImg.ImageSource());
 
+                WriteableBitmap source = mskdBmpImg.ImageSource();
                 PreviewImage.Source = source;
                 PreviewImage.OpacityMask = mskdBmpImg.GetMask();
 
@@ -107,7 +107,11 @@ namespace mskr
 
         private void AddLayer()
         {
-            BackgroundImage.Source = new WriteableBitmap(ContentPanel, null);
+            WriteableBitmap writeableBitmap = new WriteableBitmap(ContentPanel, null);
+            mskdBmpImg = new MaskedBitmapImage(writeableBitmap, this.selectedMask);
+            //WriteableBitmap writeableBitmap = mskdBmpImg.ImageSource();
+            //SetImages(writeableBitmap);
+            SetImages(mskdBmpImg.ImageSource());
         }
 
         private void MakeAppActive() 
@@ -123,9 +127,23 @@ namespace mskr
         {
             ImageSaver.SaveToAlbum = false;
             ImageSaver.SaveToCameraRoll = true;
-            WriteableBitmap savedImage = ImageSaver.SaveImage(ContentPanel);
+            WriteableBitmap savedImage = ImageSaver.SaveImage(new WriteableBitmap(ContentPanel, null));
+            //WriteableBitmap savedImage = ImageSaver.SaveImage(mskdBmpImg.ImageSource());
+            SetImages(savedImage);
+        }
 
-            BackgroundImage.Source = savedImage;
+        private void ChangeMask(String selectedMask)
+        {
+            mskdBmpImg.ChangeMask(selectedMask);
+            PreviewImage.OpacityMask = mskdBmpImg.GetMask();
+            //SetImages(mskdBmpImg.ImageSource());
+        }
+
+        private void SetImages(WriteableBitmap writeableBitmap)
+        {
+            BitmapImage bitmap = MaskedBitmapImage.ToBitmapImage(writeableBitmap);
+            BackgroundImage.Source = bitmap;
+            PreviewImage.Source = bitmap;
         }
 
         private void CreateNew()
