@@ -44,8 +44,6 @@ namespace mskr.com.blakebarrett.imaging
             //rectangle.Margin = new System.Windows.Thickness(0);
             //rectangle.Fill = new SolidColorBrush(Colors.White);
 
-            container.Children.Add(image);
-
             // See link for more on `Stretch` enum: http://msdn.microsoft.com/en-us/library/system.windows.media.stretch(v=vs.110).aspx
             image.Stretch = Stretch.UniformToFill;
             image.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
@@ -53,6 +51,8 @@ namespace mskr.com.blakebarrett.imaging
 
             image.OpacityMask = GetMask();
             image.Source = source;
+
+            container.Children.Add(image);
         }
 
         void image_ImageOpened(object sender, System.Windows.RoutedEventArgs e)
