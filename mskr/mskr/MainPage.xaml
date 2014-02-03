@@ -29,7 +29,7 @@
                 <TextBlock x:Name="ActionLabel" Text="Select Image" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
                 <Button Opacity="0" Click="SelectImageButton_Click" Margin="0,-10,0,10"></Button>
             </Grid>
-            
+
             <toolkit:ListPicker Name="MaskListPicker" 
                                 Header="Selected mask" 
                                 SelectionChanged="ListPicker_SelectionChanged"
@@ -37,28 +37,42 @@
                 <toolkit:ListPickerItem Content="sqr"/>
                 <toolkit:ListPickerItem Content="crcl"/>
                 <toolkit:ListPickerItem Content="trngl"/>
+                <toolkit:ListPickerItem Content="plrd"/>
                 <toolkit:ListPickerItem Content="POW"/>
                 <toolkit:ListPickerItem Content="eqlty"/>
+                <toolkit:ListPickerItem Content="hrt"/>
+                <toolkit:ListPickerItem Content="dmnd"/>
+                <toolkit:ListPickerItem Content="x"/>
+                <toolkit:ListPicker.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" Tag="{Binding ID}"/>
+                    </DataTemplate>
+                </toolkit:ListPicker.ItemTemplate>
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" Tag="{Binding ID}"/>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
             </toolkit:ListPicker>
 
         </StackPanel>
+        <Grid x:Name="ContentPanel" 
+        	Grid.Row="1" 
+        	Margin="0,0,0,0" 
+        	Background="White">
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
-            
-            <Rectangle Margin="0,0,0,0" Fill="White"/>
-            
-            <Image Opacity="0.5" Name="BackgroundImage" Margin="0,0,0,0" 
+            <Image Opacity="0.5" x:Name="BackgroundImage" 
                    Stretch="Uniform" 
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            
-            <Image Name="PreviewImage" Source="resources/mina.jpg" 
-                   Margin="0,0,0,0"
-                   Stretch="UniformToFill" 
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   MouseLeftButtonDown="PreviewImage_MouseLeftButtonDown"/>
+                   HorizontalAlignment="Center" 
+                   />
+
+            <Image x:Name="PreviewImage" Source="resources/mskr_add.png"
+                   Stretch="UniformToFill"
+        		   VerticalAlignment="Center"
+        		   HorizontalAlignment="Center"
+        		   MouseLeftButtonDown="PreviewImage_MouseLeftButtonDown"
+                   />
         </Grid>
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>

@@ -113,12 +113,16 @@
     <Content Include="Icons\save.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="resources\crclmsk.png" />
+    <Content Include="resources\dmndmsk.png" />
     <Content Include="resources\eqltymsk.png" />
+    <Content Include="resources\hrtmsk.png" />
     <Content Include="resources\mina.jpg" />
+    <Content Include="resources\mskr_add.png" />
     <Content Include="resources\plrdmsk.png" />
     <Content Include="resources\powmsk.png" />
     <Content Include="resources\sqrmsk.png" />
     <Content Include="resources\trnglmsk.png" />
+    <Content Include="resources\xmsk.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

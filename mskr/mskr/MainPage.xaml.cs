@@ -32,6 +32,7 @@ namespace mskr
         {
             InitializeComponent(); 
             CreateNew();
+            MaskListPicker.SetValue(Microsoft.Phone.Controls.ListPicker.ItemCountThresholdProperty, 10);
         }
 
         // Simple button Click event handler to take us to the second page
@@ -69,17 +70,17 @@ namespace mskr
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             SetActionLabel(SELECT_IMAGE);
-            photoChooserTask.Show();
+            ChangeMask("sqr");
             CreateNew();
+            AddLayer();
         }
 
         private void ListPicker_SelectionChanged(object sender, EventArgs e)
         {
             String selectedMaskString = ((ListPickerItem)((ListPicker)sender).SelectedItem).Content.ToString();
-            this.selectedMask = "resources/" + selectedMaskString.ToLower() + "msk.png";
             if (mskdBmpImg != null)
             {
-                ChangeMask(this.selectedMask);
+                ChangeMask(selectedMaskString);
             }
         }
 
@@ -97,6 +98,7 @@ namespace mskr
 
                 WriteableBitmap source = mskdBmpImg.ImageSource();
                 PreviewImage.Source = source;
+                PreviewImage.Stretch = Stretch.UniformToFill;
                 PreviewImage.OpacityMask = mskdBmpImg.GetMask();
 
                 // save every step of the way
@@ -107,7 +109,7 @@ namespace mskr
                 // Perhaps the parent image needs to be constrained to the aspect ratio of the mask image at some point.
 
                 MakeAppActive();
-                // we do this twice because we want to start out with a base sqrmsk then allow them to modify to their heart's content.
+                AddLayer();
                 AddLayer();
                 SetActionLabel(ADD_LAYER);
             }
@@ -142,7 +144,8 @@ namespace mskr
 
         private void ChangeMask(String selectedMask)
         {
-            mskdBmpImg.ChangeMask(selectedMask);
+            this.selectedMask = "resources/" + selectedMask.ToLower() + "msk.png";
+            mskdBmpImg.ChangeMask(this.selectedMask);
             PreviewImage.OpacityMask = mskdBmpImg.GetMask();
             //SetImages(mskdBmpImg.ImageSource());
         }
@@ -156,6 +159,10 @@ namespace mskr
 
         private void CreateNew()
         {
+            BitmapImage mskrBackground = new BitmapImage(new Uri("resources/mskr_add.png", UriKind.Relative));
+            PreviewImage.Source = mskrBackground;
+            BackgroundImage.Source = mskrBackground;
+
             photoChooserTask = new PhotoChooserTask();
             photoChooserTask.Completed += new EventHandler<PhotoResult>(photoChooserTask_Completed);
         }
