@@ -80,6 +80,7 @@
             <shell:ApplicationBarIconButton IconUri="/Icons/save.png" Text="Save" Click="SaveImageButton_Click" IsEnabled="False"/>
             <shell:ApplicationBarIconButton IconUri="/Icons/new.png" Text="Add Layer" Click="AddLayerButton_Click" IsEnabled="False"/>
             <shell:ApplicationBarIconButton IconUri="/Icons/delete.png" Text="Delete" Click="DeleteButton_Click" IsEnabled="False"/>
+            <shell:ApplicationBarIconButton IconUri="/Icons/questionmark.png" Text="About" Click="AboutButton_Click" IsEnabled="False"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

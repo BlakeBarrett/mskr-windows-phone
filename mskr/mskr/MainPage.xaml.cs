@@ -84,6 +84,10 @@ namespace mskr
             }
         }
 
+        private void AboutButton_Click(object sender, EventArgs e)
+        {
+        }
+
         void photoChooserTask_Completed(object sender, PhotoResult e)
         {
             if (e.TaskResult == TaskResult.OK)
@@ -131,6 +135,7 @@ namespace mskr
             (ApplicationBar.Buttons[0] as ApplicationBarIconButton).IsEnabled = true; // save
             (ApplicationBar.Buttons[1] as ApplicationBarIconButton).IsEnabled = true; // add layer
             (ApplicationBar.Buttons[2] as ApplicationBarIconButton).IsEnabled = true; // delete/new
+            (ApplicationBar.Buttons[3] as ApplicationBarIconButton).IsEnabled = true; // about
         }
 
         private void SaveImage()
@@ -162,6 +167,8 @@ namespace mskr
             BitmapImage mskrBackground = new BitmapImage(new Uri("resources/mskr_add.png", UriKind.Relative));
             PreviewImage.Source = mskrBackground;
             BackgroundImage.Source = mskrBackground;
+
+            MaskListPicker.SelectedIndex = 0;
 
             photoChooserTask = new PhotoChooserTask();
             photoChooserTask.Completed += new EventHandler<PhotoResult>(photoChooserTask_Completed);
