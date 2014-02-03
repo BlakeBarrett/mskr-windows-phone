@@ -1,8 +1,8 @@
-﻿<xapCache source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Release\mskr.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2/2/2014 9:36:11 PM">
+﻿<xapCache source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Release\mskr.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2/2/2014 9:52:06 PM">
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2/2/2014 9:10:42 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Background.png" archivePath="Background.png" lastWriteTime="1/11/2014 2:05:09 AM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="1/11/2014 2:05:09 AM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Release\mskr.dll" archivePath="mskr.dll" lastWriteTime="2/2/2014 9:36:10 PM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\obj\Release\mskr.dll" archivePath="mskr.dll" lastWriteTime="2/2/2014 9:52:05 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="7/6/2012 2:40:16 AM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="1/14/2014 9:34:22 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskrLib\bin\Windows Phone\Release\mskrLib.dll" archivePath="mskrLib.dll" lastWriteTime="2/2/2014 5:11:52 PM" />
@@ -23,7 +23,7 @@
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\resources\sqrmsk.png" archivePath="resources\sqrmsk.png" lastWriteTime="1/22/2014 11:11:53 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\resources\trnglmsk.png" archivePath="resources\trnglmsk.png" lastWriteTime="1/22/2014 12:32:19 AM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\resources\xmsk.png" archivePath="resources\xmsk.png" lastWriteTime="2/2/2014 3:40:01 PM" />
-  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="1/10/2014 11:08:41 PM" />
+  <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="2/2/2014 9:51:49 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Toolkit.Content\ApplicationBar.Add.png" archivePath="Toolkit.Content\ApplicationBar.Add.png" lastWriteTime="1/22/2014 11:20:20 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="1/22/2014 11:20:20 PM" />
   <file source="C:\Users\Blake\Src\blakebarrett\Projects\mskr-windows-phone\mskr\mskr\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="1/22/2014 11:20:20 PM" />
