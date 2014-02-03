@@ -86,6 +86,8 @@ namespace mskr
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
+            // TODO: Create an "About.xaml" page with info about mskr, blakebarrett and tiffany
+            // http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff626521(v=vs.105).aspx
         }
 
         void photoChooserTask_Completed(object sender, PhotoResult e)
