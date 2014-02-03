@@ -4,6 +4,9 @@
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_MEDIALIB" />
+      <!-- For accessing photos in the media library. - - >
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      -->
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />

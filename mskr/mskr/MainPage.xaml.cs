@@ -88,6 +88,7 @@ namespace mskr
         {
             // TODO: Create an "About.xaml" page with info about mskr, blakebarrett and tiffany
             // http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff626521(v=vs.105).aspx
+            NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
         }
 
         void photoChooserTask_Completed(object sender, PhotoResult e)
