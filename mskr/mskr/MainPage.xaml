@@ -37,12 +37,12 @@
                 <toolkit:ListPickerItem Content="sqr"/>
                 <toolkit:ListPickerItem Content="crcl"/>
                 <toolkit:ListPickerItem Content="trngl"/>
-                <toolkit:ListPickerItem Content="plrd"/>
                 <toolkit:ListPickerItem Content="POW"/>
+                <toolkit:ListPickerItem Content="plrd"/>
+                <toolkit:ListPickerItem Content="x"/>
                 <toolkit:ListPickerItem Content="eqlty"/>
                 <toolkit:ListPickerItem Content="hrt"/>
                 <toolkit:ListPickerItem Content="dmnd"/>
-                <toolkit:ListPickerItem Content="x"/>
                 <toolkit:ListPicker.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}" Tag="{Binding ID}"/>
